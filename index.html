@@ -7,12 +7,14 @@
     <title>Andrew Torgesen</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
+            background: #f5f6fa;
         }
 
         header {
@@ -21,32 +23,66 @@
             background-position: center;
             color: white;
             text-align: center;
-            padding: 2em 0;
+            padding: 3em 1em;
         }
 
+        header h1 {
+            margin: 0 0 0.25em;
+            font-size: 2.2em;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1em;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* ── Navigation ── */
         nav {
             display: flex;
-            overflow-x: auto;
+            flex-wrap: wrap;
             justify-content: center;
-            white-space: nowrap;
-            background-color: #333;
+            background-color: #2a2a2a;
+            border-bottom: 2px solid #1f2f6e;
         }
 
         nav a {
-            color: white;
-            padding: 14px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            color: #ccd0e0;
+            padding: 12px 18px 10px;
             text-decoration: none;
             text-align: center;
+            flex-shrink: 0;
+            font-size: 0.82em;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: background-color 0.15s, color 0.15s;
+        }
+
+        nav a i {
+            font-size: 1.25em;
+            color: #7b90d4;
+            transition: color 0.15s;
         }
 
         nav a:hover {
-            background-color: #575757;
+            background-color: #3a3a3a;
+            color: #fff;
+        }
+
+        nav a:hover i {
+            color: #a0b0ef;
         }
 
         nav a:visited {
-            color: white;
+            color: #ccd0e0;
         }
 
+        /* ── Body links ── */
         a {
             color: #1f2f6e;
         }
@@ -63,12 +99,186 @@
             color: #354fb5;
         }
 
+        /* ── Main content container ── */
         .container {
-            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        .profile-img {
+            display: block;
+            width: 60px;
+            height: auto;
+            margin: 0 auto 16px;
         }
 
         .section {
             margin-bottom: 40px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+        }
+
+        .section ul {
+            padding-left: 1.4em;
+            line-height: 1.8;
+        }
+
+        .section p {
+            line-height: 1.7;
+        }
+
+        /* ── About card ── */
+        #about {
+            background: #fff;
+            border-left: 4px solid #1f2f6e;
+            border-radius: 8px;
+            padding: 24px 28px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        }
+
+        #about h2 {
+            color: #1f2f6e;
+            margin-top: 0;
+        }
+
+        /* ── Links grid ── */
+        .link-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
+        .link-grid li a {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 18px 18px 16px;
+            border: 1px solid #dce1f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1f2f6e;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            transition: box-shadow 0.15s, border-color 0.15s, transform 0.12s;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .link-grid li a:hover {
+            box-shadow: 0 4px 14px rgba(31,47,110,0.13);
+            border-color: #354fb5;
+            transform: translateY(-2px);
+            color: #354fb5;
+        }
+
+        .link-grid li a:visited {
+            color: #1f2f6e;
+        }
+
+        .link-grid li a:visited:hover {
+            color: #354fb5;
+        }
+
+        .link-grid .link-icon {
+            font-size: 1.4em;
+            color: #354fb5;
+        }
+
+        .link-grid .link-title {
+            font-weight: 700;
+            font-size: 1em;
+        }
+
+        .link-grid .link-desc {
+            font-size: 0.85em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .link-grid li a:hover .link-desc {
+            color: #444;
+        }
+
+        .contact-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border: 1px solid #c8cfe8;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #1f2f6e;
+            font-size: 0.95em;
+            transition: background-color 0.15s, border-color 0.15s;
+        }
+
+        .contact-links a:hover {
+            background-color: #eef1fb;
+            border-color: #354fb5;
+            color: #354fb5;
+        }
+
+        .contact-links a:visited {
+            color: #1f2f6e;
+        }
+
+        .contact-links a:visited:hover {
+            color: #354fb5;
+        }
+
+        .contact-links i {
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 12px 20px;
+            color: #888;
+            font-size: 0.85em;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* ── Mobile adjustments ── */
+        @media (max-width: 540px) {
+            header {
+                padding: 2em 1em;
+            }
+
+            header h1 {
+                font-size: 1.7em;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            nav a {
+                padding: 13px 14px;
+                font-size: 0.95em;
+            }
+
+            .container {
+                padding: 16px 16px;
+            }
+
+            .section ul {
+                padding-left: 1.2em;
+            }
         }
     </style>
 </head>
@@ -81,17 +291,17 @@
     </header>
 
     <nav>
-        <a href="/projects">Projects</a>
-        <a href="/anixpkgs">Software</a>
-        <a href="/notes">Notes</a>
-        <a href="https://github.com/goromal/scratchpad">Math</a>
-        <a href="/art">Art</a>
-        <a href="res/thesis.pdf">Thesis</a>
-        <a href="res/resume.pdf">Resume</a>
+        <a href="/projects"><i class="fa-solid fa-rocket"></i>Projects</a>
+        <a href="/anixpkgs"><i class="fa-solid fa-code"></i>Software</a>
+        <a href="/notes"><i class="fa-solid fa-book-open"></i>Notes</a>
+        <a href="https://github.com/goromal/scratchpad"><i class="fa-solid fa-square-root-variable"></i>Math</a>
+        <a href="/art"><i class="fa-solid fa-palette"></i>Art</a>
+        <a href="res/thesis.pdf"><i class="fa-solid fa-graduation-cap"></i>Thesis</a>
+        <a href="res/resume.pdf"><i class="fa-solid fa-file-lines"></i>Resume</a>
     </nav>
 
     <div class="container">
-        <img src="res/AJT_black.png" alt="Description" width="50">
+        <img src="res/AJT_black.png" alt="Andrew Torgesen logo" class="profile-img">
         <section id="about" class="section">
             <h2>About Me</h2>
             <p>I use applied math and systems expertise to write (and lead teams that write) production software that
@@ -116,34 +326,61 @@
 
         <section id="projects" class="section">
             <h2>Links</h2>
-            <ul>
-                <li><b><a href="/projects">Projects</a>:</b> Assorted autonomy-related projects that I've worked on
-                    either during my free time or in school.</li>
-                <li> <b><a href="/anixpkgs">Software</a>:</b> Documentation for my open source software, packaged and
-                    deployed with Nix.</li>
-                <li><b><a href="/notes">Notes</a>:</b> Published notes/articles on technical and non-technical topics.
-                </li>
-                <li><b><a href="https://github.com/goromal/scratchpad">Math</a>:</b> Assorted math problems that I'm currently investigating or
-                    have investigated in the past.</li>
-                <li><b><a href="/art">Art</a>:</b> Some digital paintings.</li>
-                <li><b><a href="res/thesis.pdf">Thesis</a>:</b> My Masters thesis at MIT: "Autonomous Sensing and
-                    Navigation
-                    in Challenging Environments Using Unmanned Air Vehicles in Single- and Multi-Agent Settings"
-                </li>
-                <li><b><a href="res/resume.pdf">Resume</a>:</b> Last updated in 2021.</li>
+            <ul class="link-grid">
+                <li><a href="/projects">
+                    <span class="link-icon"><i class="fa-solid fa-rocket"></i></span>
+                    <span class="link-title">Projects</span>
+                    <span class="link-desc">Assorted autonomy-related projects from free time and school.</span>
+                </a></li>
+                <li><a href="/anixpkgs">
+                    <span class="link-icon"><i class="fa-solid fa-code"></i></span>
+                    <span class="link-title">Software</span>
+                    <span class="link-desc">Open source software, packaged and deployed with Nix.</span>
+                </a></li>
+                <li><a href="/notes">
+                    <span class="link-icon"><i class="fa-solid fa-book-open"></i></span>
+                    <span class="link-title">Notes</span>
+                    <span class="link-desc">Published notes and articles on technical and non-technical topics.</span>
+                </a></li>
+                <li><a href="https://github.com/goromal/scratchpad">
+                    <span class="link-icon"><i class="fa-solid fa-square-root-variable"></i></span>
+                    <span class="link-title">Math</span>
+                    <span class="link-desc">Assorted math problems under investigation, past and present.</span>
+                </a></li>
+                <li><a href="/art">
+                    <span class="link-icon"><i class="fa-solid fa-palette"></i></span>
+                    <span class="link-title">Art</span>
+                    <span class="link-desc">Digital paintings.</span>
+                </a></li>
+                <li><a href="res/thesis.pdf">
+                    <span class="link-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <span class="link-title">Thesis</span>
+                    <span class="link-desc">Masters thesis at MIT on autonomous sensing and navigation with UAVs.</span>
+                </a></li>
+                <li><a href="res/resume.pdf">
+                    <span class="link-icon"><i class="fa-solid fa-file-lines"></i></span>
+                    <span class="link-title">Resume</span>
+                    <span class="link-desc">Last updated in 2021.</span>
+                </a></li>
             </ul>
         </section>
 
         <section id="contact" class="section">
             <h2>Contact</h2>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/andrew-j-torgesen/">LinkedIn</a></li>
-                <li><a href="mailto:andrew.torgesen@gmail.com">andrew.torgesen@gmail.com</a>.</li>
+            <ul class="contact-links">
+                <li><a href="https://www.linkedin.com/in/andrew-j-torgesen/">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a></li>
+                <li><a href="mailto:andrew.torgesen@gmail.com">
+                    <i class="fa-solid fa-envelope"></i> andrew.torgesen@gmail.com
+                </a></li>
             </ul>
         </section>
-
-        <p>© 2024 Andrew Torgesen</p>
     </div>
+
+    <footer>
+        &copy; 2024 Andrew Torgesen
+    </footer>
 
 </body>
 
