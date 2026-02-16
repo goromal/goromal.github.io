@@ -7,7 +7,8 @@
     <title>Andrew Torgesen</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -29,13 +30,13 @@
         header h1 {
             margin: 0 0 0.25em;
             font-size: 2.2em;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         header p {
             margin: 0;
             font-size: 1em;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         /* ── Navigation ── */
@@ -44,7 +45,8 @@
             flex-wrap: wrap;
             justify-content: center;
             background-color: #2a2a2a;
-            border-bottom: 2px solid #1f2f6e;
+            border-top: 5px solid #1f2f6e;
+            border-bottom: 5px solid #1f2f6e;
         }
 
         nav a {
@@ -53,14 +55,17 @@
             align-items: center;
             gap: 5px;
             color: #ccd0e0;
-            padding: 12px 18px 10px;
+            padding: 10px 14px 8px;
+            margin: 6px 4px;
             text-decoration: none;
             text-align: center;
-            flex-shrink: 0;
+            flex: 1 0 0;
             font-size: 0.82em;
             letter-spacing: 0.03em;
             text-transform: uppercase;
-            transition: background-color 0.15s, color 0.15s;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            transition: background-color 0.15s, color 0.15s, border-color 0.15s;
         }
 
         nav a i {
@@ -72,6 +77,7 @@
         nav a:hover {
             background-color: #3a3a3a;
             color: #fff;
+            border-color: rgba(255,255,255,0.4);
         }
 
         nav a:hover i {
@@ -136,7 +142,7 @@
             border-left: 4px solid #1f2f6e;
             border-radius: 8px;
             padding: 24px 28px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
         }
 
         #about h2 {
@@ -164,14 +170,14 @@
             text-decoration: none;
             color: #1f2f6e;
             background: #fff;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
             transition: box-shadow 0.15s, border-color 0.15s, transform 0.12s;
             height: 100%;
             box-sizing: border-box;
         }
 
         .link-grid li a:hover {
-            box-shadow: 0 4px 14px rgba(31,47,110,0.13);
+            box-shadow: 0 4px 14px rgba(31, 47, 110, 0.13);
             border-color: #354fb5;
             transform: translateY(-2px);
             color: #354fb5;
@@ -328,40 +334,42 @@
             <h2>Links</h2>
             <ul class="link-grid">
                 <li><a href="/projects">
-                    <span class="link-icon"><i class="fa-solid fa-rocket"></i></span>
-                    <span class="link-title">Projects</span>
-                    <span class="link-desc">Assorted autonomy-related projects from free time and school.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-rocket"></i></span>
+                        <span class="link-title">Projects</span>
+                        <span class="link-desc">Assorted autonomy-related projects from free time and school.</span>
+                    </a></li>
                 <li><a href="/anixpkgs">
-                    <span class="link-icon"><i class="fa-solid fa-code"></i></span>
-                    <span class="link-title">Software</span>
-                    <span class="link-desc">Open source software, packaged and deployed with Nix.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-code"></i></span>
+                        <span class="link-title">Software</span>
+                        <span class="link-desc">Open source software, packaged and deployed with Nix.</span>
+                    </a></li>
                 <li><a href="/notes">
-                    <span class="link-icon"><i class="fa-solid fa-book-open"></i></span>
-                    <span class="link-title">Notes</span>
-                    <span class="link-desc">Published notes and articles on technical and non-technical topics.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-book-open"></i></span>
+                        <span class="link-title">Notes</span>
+                        <span class="link-desc">Published notes and articles on technical and non-technical
+                            topics.</span>
+                    </a></li>
                 <li><a href="https://github.com/goromal/scratchpad">
-                    <span class="link-icon"><i class="fa-solid fa-square-root-variable"></i></span>
-                    <span class="link-title">Math</span>
-                    <span class="link-desc">Assorted math problems under investigation, past and present.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-square-root-variable"></i></span>
+                        <span class="link-title">Math</span>
+                        <span class="link-desc">Assorted math problems under investigation, past and present.</span>
+                    </a></li>
                 <li><a href="/art">
-                    <span class="link-icon"><i class="fa-solid fa-palette"></i></span>
-                    <span class="link-title">Art</span>
-                    <span class="link-desc">Digital paintings.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-palette"></i></span>
+                        <span class="link-title">Art</span>
+                        <span class="link-desc">Digital paintings.</span>
+                    </a></li>
                 <li><a href="res/thesis.pdf">
-                    <span class="link-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-                    <span class="link-title">Thesis</span>
-                    <span class="link-desc">Masters thesis at MIT on autonomous sensing and navigation with UAVs.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="link-title">Thesis</span>
+                        <span class="link-desc">Masters thesis at MIT on autonomous sensing and navigation with
+                            UAVs.</span>
+                    </a></li>
                 <li><a href="res/resume.pdf">
-                    <span class="link-icon"><i class="fa-solid fa-file-lines"></i></span>
-                    <span class="link-title">Resume</span>
-                    <span class="link-desc">Last updated in 2021.</span>
-                </a></li>
+                        <span class="link-icon"><i class="fa-solid fa-file-lines"></i></span>
+                        <span class="link-title">Resume</span>
+                        <span class="link-desc">Last updated in 2021.</span>
+                    </a></li>
             </ul>
         </section>
 
@@ -369,11 +377,11 @@
             <h2>Contact</h2>
             <ul class="contact-links">
                 <li><a href="https://www.linkedin.com/in/andrew-j-torgesen/">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a></li>
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a></li>
                 <li><a href="mailto:andrew.torgesen@gmail.com">
-                    <i class="fa-solid fa-envelope"></i> andrew.torgesen@gmail.com
-                </a></li>
+                        <i class="fa-solid fa-envelope"></i> andrew.torgesen@gmail.com
+                    </a></li>
             </ul>
         </section>
     </div>
